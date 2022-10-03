@@ -1,0 +1,86 @@
+.navbar {
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ff6b81;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navItems button {
+  border: none;
+  background-color: #fff;
+  margin-right: 10px;
+  border-radius: 2rem;
+  padding: 10px;
+  color: #2f3542;
+}
+
+.navItems button:hover {
+  background-color: #f1f2f6;
+}
+
+.navUsers {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2rem;
+  border: 1px solid #ced6e0;
+  padding: 5px 5px 5px 12px;
+  color: #747d8c;
+}
+
+.navUsers:hover {
+  box-shadow: 0px 6px 14px #dfe4ea;
+}
+
+.icons {
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.dropDown {
+  position: absolute;
+  top: 50px;
+  width: 240px;
+  border-radius: 1rem;
+  background-color: transparent;
+  box-shadow: 0px 6px 14px #dfe4ea;
+}
+
+.dropDown a:nth-child(1) {
+  font-weight: 500;
+}
+
+.dropDown a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  margin: 10px 0px;
+  color: #2f3542;
+  font-size: 12px;
+}
+
+.dropDown a:hover {
+  background-color: #f1f2f6;
+}
