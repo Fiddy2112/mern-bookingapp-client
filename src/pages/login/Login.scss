@@ -1,0 +1,62 @@
+.login {
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &Container {
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #ced6e0;
+    padding: 0px 10px;
+    h1 {
+      font-weight: 600;
+      color: #2f3542;
+    }
+  }
+
+  &Items {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    h2 {
+      color: #2f3542;
+      font-size: 15px;
+    }
+  }
+  &Search {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &Input {
+      font-size: 15px;
+      padding: 10px 5px;
+      outline: none;
+
+      border: 1px solid #ced6e0;
+      border-radius: 5px;
+    }
+  }
+  .btnSubmit {
+    padding: 8px 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ff6b81;
+    color: #ff6b81;
+    background-color: #fff;
+
+    &:hover {
+      color: #fff;
+      background-color: #ff6b81;
+    }
+  }
+}
