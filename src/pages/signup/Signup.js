@@ -1,16 +1,17 @@
 import React from "react";
 import "./Signup.scss";
 
-function Signup() {
+function Login() {
   return (
     <div className="signup">
       <div className="signupContainer">
-        <div className="signupHeader">
-          <span>X</span>
-          <h2>Log in or sign up</h2>
-        </div>
+        <h1>Log in / Sign up</h1>
+
         <div className="signupItems">
-          <h1>Welcome to Booking App</h1>
+          <h2>
+            Are you ready travel with{" "}
+            <span style={{ color: "#ff6b81" }}>Booking App</span>
+          </h2>
           <form className="signupSearch">
             <input
               className="signupSearchInput"
@@ -37,4 +38,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Login;

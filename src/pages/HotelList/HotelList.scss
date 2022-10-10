@@ -1,0 +1,114 @@
+.list {
+  &Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // margin-top: 2rem;
+  }
+
+  &Wrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &Search {
+    flex: 1;
+    background-color: #ff6b81;
+    padding: 1rem;
+    border-radius: 1rem;
+    height: max-content;
+
+    button {
+      width: 100%;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 10px 8px;
+      border-radius: 5px;
+      border: 1px solid #fff;
+      background-color: #fff;
+      color: #ff6b81;
+
+      &:hover {
+        border: 1px solid #f999a7;
+        background-color: #f999a7;
+        color: #fff;
+      }
+    }
+  }
+
+  &Title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2f3542;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  &Item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1rem;
+
+    label {
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    &Date {
+      background-color: #fff;
+      border-radius: 10px;
+    }
+
+    input {
+      height: 30px;
+      padding: 5px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+
+    > span {
+      height: 30px;
+      padding: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 12px;
+    }
+  }
+
+  &Option {
+    padding: 1rem;
+    &Item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 12px;
+    }
+
+    &Text {
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    &Input {
+      width: 50px;
+      border: none;
+    }
+  }
+
+  &Result {
+    gap: 1rem;
+    flex: 2;
+  }
+}

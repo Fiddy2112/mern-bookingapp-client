@@ -20,11 +20,6 @@ function Login() {
             />
             <input
               className="loginSearchInput"
-              type="text"
-              placeholder="Email..."
-            />
-            <input
-              className="loginSearchInput"
               type="password"
               placeholder="Password..."
             />

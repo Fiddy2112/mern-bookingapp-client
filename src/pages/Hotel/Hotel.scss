@@ -1,0 +1,137 @@
+.hotel {
+  &Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  &Slider {
+  }
+
+  &Wrapper {
+    width: 100%;
+    max-width: 1024px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    .bookNow {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      border: 1px solid #ff6b81;
+      padding: 10px;
+      font-weight: 500;
+      border-radius: 5px;
+      color: #ff6b81;
+      background-color: #fff;
+      &:hover {
+        color: #fff;
+        background-color: #ff6b81;
+      }
+    }
+  }
+
+  &Title {
+    font-size: 23px;
+    color: #2f3542;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+
+  &Address {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #57606f;
+    i {
+      color: green;
+    }
+  }
+
+  &Distance {
+    color: #ff6b81;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  &PreferentialPrice {
+    color: #57606f;
+    font-weight: 500;
+    font-size: 13px;
+  }
+
+  &Images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    object-fit: cover;
+
+    &Wrapper {
+      width: 33%;
+    }
+  }
+
+  &Img {
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
+  &Detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 20px;
+
+    &Text {
+      flex: 3;
+    }
+    &Price {
+      flex: 1;
+      background-color: #ced6e0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      gap: 1.5rem;
+      h1 {
+        color: #2f3542;
+        font-weight: 600;
+      }
+      span {
+        font-size: 14px;
+        color: #57606f;
+      }
+      h2 {
+        font-weight: 300;
+        color: #57606f;
+        b {
+          color: #2f3542;
+        }
+      }
+      button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        border: 1px solid #1e90ff;
+        background-color: transparent;
+        color: #1e90ff;
+
+        &:hover {
+          background-color: #1e90ff;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  &Desc {
+    font-size: 14px;
+    margin-top: 20px;
+    color: #57606f;
+  }
+}

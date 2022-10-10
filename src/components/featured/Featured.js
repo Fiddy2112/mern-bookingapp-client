@@ -1,60 +1,50 @@
-import React from "react";
-import useFetch from "../../hooks/useFetch";
+import React, { useEffect } from "react";
+import { featuredCity } from "../../api";
+import { actionType } from "../../context/reducer";
+import { useProvider } from "../../context/StateProvider";
+
 import "./Featured.scss";
 
 function Featured() {
-  const { data, loading, error } = useFetch(
-    "http://localhost:5000/api/hotels/countByCity?cities=korean,japan,vietnam"
-  );
+  const [initialState, dispatch] = useProvider();
+  const { featured } = initialState;
 
-  const { listCity } = data;
+  // console.log(featured);
 
-  console.log(data);
-  console.log(listCity);
+  const images = [
+    "https://images.unsplash.com/photo-1546574722-8267e1c67c54?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzl8fGtvcmVhbiUyMGNpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8amFwYW4lMjBjaXR5fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8dmlldG5hbSUyMGNpdHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+  ];
 
+  const nameCity = ["Korean", "Japan", "VietNam"];
+
+  useEffect(() => {
+    if (!featured) {
+      featuredCity().then((data) => {
+        // console.log(data);
+        dispatch({
+          type: actionType.SET_FEATURED,
+          featured: data.data,
+        });
+      });
+    }
+  }, []);
   return (
     <div className="featured">
-      {loading ? (
-        "Please wait..."
-      ) : (
-        <>
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvcGVydGllc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt="featuredImg"
-            />
-            <div className="featuredTitles">
-              <h1>Korean</h1>
-              <h2>{data?.listCity} Properties</h2>
+      <>
+        {featured &&
+          nameCity &&
+          images.map((img, index) => (
+            <div className="featuredItem" key={index}>
+              <img className="featuredImg" src={img} alt="featuredImg" />
+              <div className="featuredTitles">
+                <h1>{nameCity[index]}</h1>
+                <h2>{featured[index]} Properties</h2>
+              </div>
             </div>
-          </div>
-
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvcGVydGllc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt="propertiesImg"
-            />
-            <div className="featuredTitles">
-              <h1>Japan</h1>
-              <h2>{data?.listCity} Properties</h2>
-            </div>
-          </div>
-
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://images.unsplash.com/photo-1600585153490-76fb20a32601?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvcGVydGllc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-              alt="propertiesImg"
-            />
-            <div className="featuredTitles">
-              <h1>Vietnam</h1>
-              <h2>{data?.listCity} Properties</h2>
-            </div>
-          </div>
-        </>
-      )}
+          ))}
+      </>
     </div>
   );
 }
