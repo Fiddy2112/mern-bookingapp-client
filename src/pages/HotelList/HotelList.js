@@ -76,8 +76,8 @@ function HotelList() {
               <span
                 className="listItemDate"
                 onClick={() => setOpenDate(!openDate)}
-              >{`${format(dates[0].startDate, "MM/dd/yyyy")} to ${format(
-                dates[0].endDate,
+              >{`${format(dates[0]?.startDate, "MM/dd/yyyy")} to ${format(
+                dates[0]?.endDate,
                 "MM/dd/yyyy"
               )}`}</span>
               {openDate && (

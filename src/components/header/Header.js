@@ -5,6 +5,8 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./Header.scss";
+import { useProvider } from "../../context/StateProvider";
+import { actionType } from "../../context/reducer";
 
 function Header({ type }) {
   const [openDate, setOpenDate] = useState(false);
@@ -38,8 +40,18 @@ function Header({ type }) {
     });
   };
 
+  const [initialState, dispatch] = useProvider();
+
+  console.log(initialState);
   const handleSearch = () => {
-    //{ replace, state }
+    dispatch({
+      type: actionType.NEW_SEARCH,
+      payload: {
+        destination,
+        dates,
+        options,
+      },
+    });
     navigate("/hotels", { state: { destination, dates, options } });
   };
 
