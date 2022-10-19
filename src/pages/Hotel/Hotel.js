@@ -64,11 +64,11 @@ function Hotel() {
   };
 
   const handleClick = () => {
-    if (user) {
-      setOpenModal(true);
-    } else {
-      navigate("/login");
-    }
+    // if (user) {
+    setOpenModal(true);
+    // } else {
+    //   navigate("/login");
+    // }
   };
 
   const cheapestPriceSale =

@@ -12,13 +12,20 @@
   &Container {
     background-color: #fff;
     padding: 20px;
+    border-radius: 10px;
     position: relative;
 
     .close {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 6px;
+      right: 6px;
       cursor: pointer;
+    }
+
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      color: #57606f;
     }
   }
 
