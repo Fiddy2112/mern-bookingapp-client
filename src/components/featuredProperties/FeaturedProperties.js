@@ -12,7 +12,7 @@ function FeaturedProperties() {
 
   const [featuredProperties, setFeaturedProperties] = useState([]);
 
-  console.log("featuredHotels", featuredHotels);
+  // console.log("featuredHotels", featuredHotels);
 
   useEffect(() => {
     const featuredPropertiesHotels = async () => {

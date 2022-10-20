@@ -20,6 +20,8 @@
       top: 6px;
       right: 6px;
       cursor: pointer;
+      font-size: 12px;
+      color: #57606f;
     }
 
     span {
@@ -44,18 +46,21 @@
 
   &Title {
     font-weight: 500;
+    font-size: 15px;
   }
 
   &Desc {
     font-weight: 300;
+    font-size: 12px;
   }
 
   &Maxpeople {
     font-size: 12px;
+    font-weight: bold;
   }
 
   &Price {
-    font-weight: 500;
+    font-weight: 600;
   }
 
   &SelectRooms {
@@ -63,13 +68,14 @@
     flex-wrap: wrap;
     gap: 5px;
     font-size: 8px;
-    color: gray;
+    color: #57606f;
 
     .room {
       display: flex;
       flex-direction: column;
 
       label {
+        color: #747d8c;
       }
       input {
       }
@@ -77,14 +83,19 @@
   }
 
   &Button {
-    border: none;
+    border: 1px solid #ff6b81;
     padding: 10px 20px;
-    background-color: #0071c2;
-    color: white;
+    background-color: #fff;
+    color: #ff6b81;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
     width: 100%;
     margin-top: 20px;
+
+    &:hover {
+      color: #fff;
+      background-color: #ff6b81;
+    }
   }
 }

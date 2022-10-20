@@ -42,7 +42,7 @@ function Header({ type }) {
 
   const [initialState, dispatch] = useProvider();
 
-  console.log(initialState);
+  // console.log(initialState);
   const handleSearch = () => {
     dispatch({
       type: actionType.NEW_SEARCH,
